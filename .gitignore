@@ -1,2 +1,15 @@
 # User specific information:
 .idea/
+
+# rbenv:
+.ruby-version
+
+# Gemfile.lock:
+Gemfile.lock
+
+# Jar dependencies:
+lib/com/
+vendor/
+
+# Build binaries:
+*.gem
