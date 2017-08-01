@@ -115,7 +115,7 @@ class LogStash::Inputs::ElasticsearchDynamicAggregator < LogStash::Inputs::Base
     @logger.debug 'Initializing scheduler'
     @scheduler = Rufus::Scheduler.new :max_work_threads => @threads
     @scheduler.send(schedule_type, schedule_value, opts) {run_once queue}
-    @scheduler.join
+    sleep 1 until @scheduler.jobs.empty?
     @logger.debug 'Scheduler initialization successful'
   end
 
